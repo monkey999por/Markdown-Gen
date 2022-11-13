@@ -15,7 +15,9 @@ public class FileLogic {
     private File outFile;
     private FileWriter writer;
     // markdown用の改行
-    private String br = "  " + System.getProperty("line.separator");
+    private String mbr = "  ";
+    private String br = System.getProperty("line.separator");
+
     private List<String> inputFileRows = new ArrayList<>();
     private int rowCount = 0;
 
@@ -74,6 +76,14 @@ public class FileLogic {
      */
     public void write(String content) throws IOException {
         writer.write(content + br);
+    }
+
+    /**
+     * マークダウン用の改行(スペース２こ)を含めて書き込み
+     * @param content ファイルに書き込む内容
+     */
+    public void writeBr(String content) throws IOException {
+        writer.write(content + mbr + br);
     }
 
     /**
