@@ -14,7 +14,8 @@ public class FileLogic {
 
     private File outFile;
     private FileWriter writer;
-    private String br = System.getProperty("line.separator");
+    // markdown用の改行
+    private String br = "  " + System.getProperty("line.separator");
     private List<String> inputFileRows = new ArrayList<>();
     private int rowCount = 0;
 

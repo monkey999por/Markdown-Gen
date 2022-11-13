@@ -39,37 +39,61 @@ public class Javascript implements Creator {
 
             // i: ファイルの行番号
             var temp = new ArrayList<String>();
+            // ドキュメンテーションのコメントの中にいる間true
+            boolean inSection = false;
+            boolean writeCodeBlockStart = false;
+
             for (int i = 1; i < file.getRowCount(); i++) {
                 var target = file.getRow(i).strip();
 
-
-                // ドキュメンテーションコメント処理
+                // ドキュメンテーション処理
                 // 一致したらそのままコメント外す
-                var startDocComment = "\\s*\\t*\\/\\*\\*";
-                Pattern pstart = Pattern.compile(startDocComment);
+                {
+                    // ドキュメンテーションコメント開始
+                    var startDocComment = "^/\\*\\*$";
+                    var matcherStart = Pattern.compile(startDocComment).matcher(target);
+                    if (matcherStart.find()) {
+                        // コードブロック
+                        // の終わり
+                        if (writeCodeBlockStart) {
+                            file.write("```");
+                            writeCodeBlockStart = false;
+                        }
 
-                var endDocCommnet = "\\s*\\t*\\*/";
-                Pattern pend = Pattern.compile(endDocCommnet);
+                        inSection = true;
+                        continue;
+                    }
 
+                    var endDocComment = "^\\*/$";
+                    var matcherEnd = Pattern.compile(endDocComment).matcher(target);
+                    // ドキュメンテーションコメント終了
+                    if (matcherEnd.find()) {
+                        inSection = false;
+                        continue;
+                    }
 
-                // 通常のコメント処理
-                var comment = "\\/\\/";
-                Pattern pcomment = Pattern.compile(comment);
-
-                if (pcomment.matcher(target).find()) {
-                    System.out.println("find!!" + file.getRow(i));
+                    // ドキュメンテーションコメントの中身はそのまま書き込み(* )は削除
+                    if (inSection) {
+                        file.write(Pattern.compile("\\*\s*").matcher(target).replaceAll(""));
+                        System.out.println("section: " + Pattern.compile("\\*\s*").matcher(target).replaceAll(""));
+                    }
                 }
 
+                // 通常の処理
+                // ```を付与
+                if (!inSection){
+                    if (!writeCodeBlockStart) {
+                        file.write("```javascript");
+                        writeCodeBlockStart = true;
+                    }
 
+                    // コードブロックの中は加工（空白削除とか）してない素の状態で書き込み
+                    file.write(file.getRow(i));
+                }
             }
-
-            //
-
             file.close();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
-
     }
 }
