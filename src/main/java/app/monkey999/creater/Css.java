@@ -11,6 +11,11 @@ public class Css implements Creator {
 
     @Override
     public void create(String inputFileName) {
-        
+
+// /* comment */
+        // /*
+        // comment
+        // */
+
     }
 }
