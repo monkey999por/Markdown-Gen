@@ -3,13 +3,13 @@ package app.monkey999.creater;
 public class CreatorFactory {
     public static Creator getInstance(CreatorName name){
         Creator instance = switch (name) {
-            case Java -> null;
+            case Java -> new Java();
             case javascript -> new Javascript();
-            case PHP -> null;
-            case Powershell -> null;
-            case nextjs -> null;
-            case html -> null;
-            case css -> null;
+            case PHP -> new PHP();
+            case Powershell -> new Powershell();
+            case nextjs -> new Nextjs();
+            case html -> new Html();
+            case css -> new Css();
         };
         return instance;
     }

@@ -14,18 +14,36 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Main {
 
+    /**
+     *
+     * @param args args[0]: 変換対象ファイル args[1]: ファイルの言語 例: javascript
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception {
 
-        // 入力ファイル
-        var inputFile = Paths.get(args[0]);
+        System.out.println("args[0]" + args[0]);
+        System.out.println("args[1]" + args[1].toLowerCase());
 
-        Creator js = CreatorFactory.getInstance(CreatorName.javascript);
-        js.create(args[0]);
+        Creator creator = switch (args[1].toLowerCase()) {
+            case "java" -> CreatorFactory.getInstance(CreatorName.Java);
+            case "javascript" -> CreatorFactory.getInstance(CreatorName.javascript);
+            case "php" -> CreatorFactory.getInstance(CreatorName.PHP);
+            case "powershell" -> CreatorFactory.getInstance(CreatorName.Powershell);
+            case "nextjs" -> CreatorFactory.getInstance(CreatorName.nextjs);
+            case "html" -> CreatorFactory.getInstance(CreatorName.html);
+            case "css" -> CreatorFactory.getInstance(CreatorName.css);
+            default -> null;
+
+        };
+
+        creator.message();
+        creator.create(args[0]);
 
     }
 }
