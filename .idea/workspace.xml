@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8f58951b-e904-4887-a198-5e3fc7cf1c3d" name="変更" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/monkey999/creater/Css.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/monkey999/creater/Css.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/monkey999/creater/Html.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/monkey999/creater/Html.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/monkey999/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/monkey999/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/monkey999/creater/CreatorFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/monkey999/creater/CreatorFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/monkey999/creater/CreatorName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/monkey999/creater/CreatorName.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,11 +44,14 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="app.monkey999.creater" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="app.monkey999.creater" />
     </key>
   </component>
-  <component name="RunManager" selected="アプリケーション.Main-javascript">
+  <component name="RunManager" selected="アプリケーション.Main-Nomal">
     <configuration name="名前未設定" type="AntRunConfiguration" nameIsGenerated="true">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -81,6 +85,14 @@
       <option name="MAIN_CLASS_NAME" value="app.monkey999.Main" />
       <module name="Markdown-Gen" />
       <option name="PROGRAM_PARAMETERS" value="&quot;C:\develop\WHAT_IS\what_is_javascript\content\new_js_object_orientation.js&quot; Nextjs" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main-Nomal" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="app.monkey999.Main" />
+      <module name="Markdown-Gen" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;C:\develop\WHAT_IS\what_is_javascript\content\new_js_object_orientation.js&quot; nomal" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -124,6 +136,7 @@
       <item itemvalue="アプリケーション.Main-Powershell" />
       <item itemvalue="アプリケーション.Main-Java" />
       <item itemvalue="アプリケーション.Main-javascript" />
+      <item itemvalue="アプリケーション.Main-Nomal" />
       <item itemvalue="アプリケーション.Main-Nextjs" />
       <item itemvalue="アプリケーション.Main-HTML" />
       <item itemvalue="アプリケーション.Main-CSS" />

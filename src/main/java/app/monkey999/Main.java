@@ -38,6 +38,7 @@ public class Main {
             case "nextjs" -> CreatorFactory.getInstance(CreatorName.nextjs);
             case "html" -> CreatorFactory.getInstance(CreatorName.html);
             case "css" -> CreatorFactory.getInstance(CreatorName.css);
+            case "nomal" -> CreatorFactory.getInstance(CreatorName.nomal);
             default -> null;
 
         };

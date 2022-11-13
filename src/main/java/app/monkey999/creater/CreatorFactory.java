@@ -10,6 +10,7 @@ public class CreatorFactory {
             case nextjs -> new Nextjs();
             case html -> new Html();
             case css -> new Css();
+            case nomal -> new Nomal();
         };
         return instance;
     }
