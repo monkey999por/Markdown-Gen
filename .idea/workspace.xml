@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f58951b-e904-4887-a198-5e3fc7cf1c3d" name="変更" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/input.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/input.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/monkey999/creater/Java.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/monkey999/creater/Java.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/monkey999/creater/Javascript.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/monkey999/creater/Javascript.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,23 +35,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/develop/PROJECT/Markdown-Gen&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/develop/PROJECT/Markdown-Gen/src/main/resources",
+    "settings.editor.selected.configurable": "editing.templates"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="app.monkey999.creater" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\develop\PROJECT\Markdown-Gen\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="app.monkey999.creater" />
     </key>
   </component>
-  <component name="RunManager" selected="アプリケーション.Main-Nomal">
+  <component name="RunManager" selected="アプリケーション.Main-javascript">
     <configuration name="名前未設定" type="AntRunConfiguration" nameIsGenerated="true">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -74,7 +80,7 @@
     <configuration name="Main-Java" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="app.monkey999.Main" />
       <module name="Markdown-Gen" />
-      <option name="PROGRAM_PARAMETERS" value="&quot;C:\develop\WHAT_IS\what_is_javascript\content\new_js_object_orientation.js&quot; Java" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;C:\develop\PROJECT\Markdown-Gen\src\main\resources\input.java&quot; Java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -114,7 +120,7 @@
     <configuration name="Main-javascript" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="app.monkey999.Main" />
       <module name="Markdown-Gen" />
-      <option name="PROGRAM_PARAMETERS" value="&quot;C:\develop\WHAT_IS\what_is_javascript\content\new_js_object_orientation.js&quot; javascript" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;C:\develop\PROJECT\Markdown-Gen\src\main\resources\input.js&quot; javascript" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

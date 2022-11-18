@@ -3,6 +3,7 @@ package app.monkey999.creater;
 import app.monkey999.HatenaConst;
 import app.monkey999.file.FileLogic;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
@@ -46,6 +47,7 @@ public class Javascript implements Creator {
 
             // 目次
             file.writeBr(HatenaConst.agenda);
+            System.out.println(file.getRowCount());
 
             // i: ファイルの行番号
             var temp = new ArrayList<String>();
