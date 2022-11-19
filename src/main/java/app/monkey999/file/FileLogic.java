@@ -37,9 +37,9 @@ public class FileLogic {
             System.out.println(inputFile.toAbsolutePath());
 
             // create file
-            var filename = inputFile.getParent() + "\\" + inputFile.getFileName().toString().split("\\.")[0] + ".md";
+            var filename = inputFile.getParent() + "\\" + inputFile.getFileName().toString() + ".md";
             System.out.println(filename);
-            outFile = new File(filename.toString());
+            outFile = new File(filename.toString() );
             var ready = outFile.exists() && outFile.delete();
 
             if (ready)

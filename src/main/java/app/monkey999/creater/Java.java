@@ -9,15 +9,16 @@ import java.util.regex.Pattern;
 public class Java implements Creator {
 
     @Override
-    public void message(){
+    public void message() {
         System.out.println("""
-               Java create;
-                """);
+                Java create;
+                 """);
     }
 
     /**
      * 基本はjavascriptと同じだが、以下を実施
      * 1. ドキュメンテーションコメント内のアノテーションは削除する
+     * 2. importとclassの削除
      *
      * @param inputFileName
      */
@@ -68,17 +69,41 @@ public class Java implements Creator {
 
                     // ドキュメンテーションコメントの中身はそのまま書き込み(* )は削除
                     if (inSection) {
-                        file.writeBr(Pattern.compile("\\*\s*").matcher(target).replaceAll(""));
+                        String line = Pattern.compile("\\*\s*").matcher(target).replaceAll("");
+                        // 1. ドキュメンテーションコメント内のアノテーションは削除する
+                        if (!line.strip().startsWith("@")) {
+                            file.writeBr(line);
+                        }
+
                         System.out.println("section: " + Pattern.compile("\\*\s*").matcher(target).replaceAll(""));
                     }
                 }
 
                 // 通常の処理
                 // ```を付与
-                if (!inSection){
+                if (!inSection) {
                     if (!writeCodeBlockStart) {
-                        file.write("```javascript");
+                        file.write("```java");
                         writeCodeBlockStart = true;
+                    }
+                    // import 除外
+                    if (file.getRow(i).strip().startsWith("import")) {
+                        continue;
+                    }
+
+                    // package除外
+                    if (file.getRow(i).strip().startsWith("package")) {
+                        continue;
+                    }
+
+
+                    // class除外
+                    if(Pattern.compile("\\s*class\\s*").matcher(target).find()){
+                        continue;
+                    }
+                    // class除外(閉じ括弧)※やり方が雑なのでそのうち直す
+                    if (file.getRow(i).startsWith("}")) {
+                        continue;
                     }
 
                     // コードブロックの中は加工（空白削除とか）してない素の状態で書き込み
@@ -90,7 +115,5 @@ public class Java implements Creator {
             throw new RuntimeException(e);
         }
     }
-
-
 }
 
