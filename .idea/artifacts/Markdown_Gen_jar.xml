@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Markdown-Gen:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Markdown_Gen_jar</output-path>
+    <root id="archive" name="Markdown-Gen.jar">
+      <element id="module-output" name="Markdown-Gen" />
+    </root>
+  </artifact>
+</component>
