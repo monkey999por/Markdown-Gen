@@ -18,6 +18,8 @@ args[1]: ソースファイルの種類　例: javascript
 - jar実行
   - intelljでbuild⇒アーティファクトのビルド⇒Markdown-gen.jar
   - `java -jar Markdown-Gen.jar "filename.java" java`
+  
+- または`mdgen.bat`を実行
 
 ### ■変換対象  
 2022/11/19時点  
