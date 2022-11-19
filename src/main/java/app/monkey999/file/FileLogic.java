@@ -1,5 +1,7 @@
 package app.monkey999.file;
 
+import app.monkey999.constant.Const;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -14,6 +16,7 @@ public class FileLogic {
 
     private File outFile;
     private FileWriter writer;
+    private String outFilePath;
     // markdown用の改行
     private String mbr = "  ";
     private String br = System.getProperty("line.separator");
@@ -37,13 +40,13 @@ public class FileLogic {
             System.out.println(inputFile.toAbsolutePath());
 
             // create file
-            var filename = inputFile.getParent() + "\\" + inputFile.getFileName().toString() + ".md";
-            System.out.println(filename);
-            outFile = new File(filename.toString() );
+            outFilePath = Const.OUT_DIR + "\\" + inputFile.getFileName().toString() + ".md";
+
+            outFile = new File(outFilePath);
             var ready = outFile.exists() && outFile.delete();
 
             if (ready)
-                Files.createFile(Path.of(filename));
+                Files.createFile(Path.of(outFilePath));
 
             // 行ごとのリストを初期化
             if (outFile.exists() && outFile.isFile() && outFile.canWrite())
@@ -65,9 +68,10 @@ public class FileLogic {
 
     /**
      * input fileの特定の行の内容を取得
+     *
      * @param row 行番号
      */
-    public String getRow(int row){
+    public String getRow(int row) {
         return this.inputFileRows.get(row - 1);
     }
 
@@ -80,6 +84,7 @@ public class FileLogic {
 
     /**
      * マークダウン用の改行(スペース２こ)を含めて書き込み
+     *
      * @param content ファイルに書き込む内容
      */
     public void writeBr(String content) throws IOException {
@@ -88,12 +93,16 @@ public class FileLogic {
 
     /**
      * {@link FileWriter#close()}をcall
-     * @see FileWriter#close()
+     *
      * @throws Exception closeが失敗した。
+     * @see FileWriter#close()
      */
     public void close() throws Exception {
-        try  {
+        try {
             writer.close();
+            System.out.println();
+            System.out.println("Done!!");
+            System.out.println(outFilePath);
         } catch (IOException e) {
             throw new Exception("ファイル書き込みエラー");
         }
